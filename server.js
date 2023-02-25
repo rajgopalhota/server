@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const dotenv=require("dotenv");
 const routesurls = require('./routes/routes');
 const cors = require('cors');
-
+const PORT = process.env.PORT || 2003
 
 dotenv.config()
 
@@ -15,4 +15,4 @@ mongoose.connect(process.env.DATABASE_ACCESS,()=>{
 app.use(express.json())
 app.use(cors());
 app.use('/api',routesurls);
-app.listen(2003,()=>{console.log("Server Started on 2003")})
+app.listen(PORT,()=>{console.log("Server Started on 2003")})
